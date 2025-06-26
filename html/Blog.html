@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Lorem blog about the impact of technology on the watch industry. Read insightful articles on positive and negative impacts, boosting sales, and more.">
+    <meta name="keywords" content="watch technology, technology in watches, impact of technology, smart watches, traditional watches, watch industry blog, watch sales">
+    <meta name="author" content="Lorem Company">
+    <title>Blog- Lorem</title>
+
+
+<style>
+    header
+    {
+        left: -50px;
+    }
+
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between; /* horizontal allignment*/
+        align-items: center; /*vertical allignment*/
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8); /*transparency*/
+        padding: 20px 50px;
+        z-index: 100;
+        height: 40px;
+    }
+
+    header .websitename {
+        font-size: 24px;
+        font-family: 'Roboto local', 'Roboto', sans-serif;  /*"Luxe Eterna" in the left of header*/
+        font-weight: thin;
+        color: white;
+    }
+
+    /* for navigation*/
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav a {
+        text-decoration: none;  /*removes the underline for links*/
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 5px;   /* rounds the border*/
+        transition: background-color 0.5s ease;
+    }
+
+    nav a:hover {
+        background-color: #ffad32;
+    }
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+    background-color: #d6d6d6;
+}
+
+.container {
+    display: flex;
+    width: 90%;  /* 90% of the parent element's width */
+    height: 520px;  /* Approximate value for 80vh, assuming 800px viewport height */
+    background-color: #fff;
+    border-radius: 10px;  /* 10px border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.image-container {
+    flex: 7;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;  /* 100% width of the container */
+    height: 100%;  /* 100% height of the container */
+    object-fit: cover;
+}
+
+.text-container {
+    flex: 3;
+    padding: 20px;  /* 20px padding */
+    background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.text-container h1 {
+    margin: 0;
+    font-size: 32px;  /* 32px font size for h1 (converted from 2em) */
+}
+
+.text-container p {
+    margin: 10px 0;
+    font-size: 19px;  /* 19px font size for p (converted from 1.2em) */
+}
+
+
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.sero {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #13343B;
+}
+
+.card-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-item:hover {
+    transform: scale(1.02);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Ensuring the anchor inside card-item behaves like a block */
+.card-item a {
+    display: block;  /* Ensures the entire content of card-item is clickable */
+    text-decoration: none;  /* Removes underline from links */
+    color: inherit;  /* Inherit color from the parent element */
+}
+
+/* Optional: Add hover effects when the card is hovered */
+.card-item a:hover {
+    transform: scale(1.02);  /* Slight scaling effect */
+    background-color: rgba(0, 0, 0, 0.05);  /* Optional background color on hover */
+}
+
+footer {
+    background-color: #000; /* background of the background at the end seeting it to the black*/
+    color: #fafafa; /* text color to the white */
+    text-align: center; /* Writing every text in the center */
+    padding: 32px; /*providing spacing from the edges of footer container */
+}
+
+footer p {
+    margin-bottom: 16px; /* creating a 16px margin or spacing for links below */
+}
+
+.social-links {
+    display: flex; /* converting the links into flex and into horizontal like nav links */
+    justify-content: center; /* Putting links in the center of the center just below paragraph of fotter*/ 
+    gap: 16px; /* space between each link 16px*/
+}
+
+.social-links a {
+    color: #fafafa; /* color of each link setting from blue to white*/
+    font-weight: bold; /* bolding the entire links*/
+    transition: color 0.3s; /* transistion for the hover*/
+}
+
+.social-links a:hover {
+    color: #121212; /* Transition of link when hover over them*/
+}
+    
+</style>
+
+</head>
+<body>
+   <!--Header section-->
+   <header>
+    <div class="websitename"><img src ="../images/LOREM.png" style="height: 40px;"></div>
+    <nav>
+        <a href="../Homepage.html">Home</a>
+        <a href="./Product Page redesign.html">Stores</a>
+        <a href="./About.html">About</a>
+        <a href="./research.html">Research</a>
+        <a href="./Blog.html">Blog</a>
+        <a href="./Contact us.html">Contact Us</a>
+    </nav>
+</header>
+
+    <main>
+        <!-- Introduction portion -->
+        <div class="container">
+            <div class="image-container">
+                <img src="../images/Bloghome.png" alt="Perplexity and Carbon">
+            </div>
+            <div class="text-container">
+                <h1>Welcoming Technology to the Watch </h1>
+                <p> Technology is the fruit of countless trial and error where we have come from bulky computers to the microcomputer which have revolutionized the various fields. Watch industry is no exception to this revolution. </p>
+               <a href="./Blog/Introduction.html"> <button>READ MORE</button> </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="sero">
+        <!-- sub blog section -->
+        <h2>Featured Articles</h2>
+        <div class="card">
+            <!-- sub blog 1-->
+            <div class="card-item">
+                <a href="./Blog/Postive Impact .html">
+                    <img src="../images/product2.png" alt="Understanding AI" class="card-image">
+                    <h3>Positive Impact</h3>
+                    <p>Positives of the Teachnology in Watch industry</p>
+                </a>
+            </div>
+
+            <!-- sub blog 2-->
+            <div class="card-item">
+                <a href="././Blog/Negative Impact.html">
+                    <img src="../images/a watch with the concept of negative impact of technology.png" alt="Productivity Hacks" class="card-image">
+                    <h3>Negative Impact</h3>
+                    <p>Negatives of Technology in the Watch</p>
+                </a>
+            </div>
+
+            <!-- sub blog 3-->
+            <div class="card-item">
+                <a href="./Blog/How technology can boost watch sales.html">
+                    <img src="../images/sales with sleak design.png" alt="Productivity Hacks" class="card-image">
+                    <h3>Boosting the watch sales with technology</h3>
+                    <p> How technology bost the watch sales</p>
+                </a>
+            </div>
+
+            <!-- sub blog 4-->
+            <div class="card-item">
+                <a href="./Blog/Conclusion.html">
+                    <img src="../images/Aqua.jpg" alt="Community Stories" class="card-image">
+                    <h3>Conclusion</h3>
+                    <p>A summary of technology in watch industry</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+     <!-- Footer Section -->
+     <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Lorem. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Explore Lorem's product collection with detailed information, customer reviews, and easy purchase options. Find your ideal product from a wide selection.">
+    <meta name="keywords" content="Lorem product page, buy Lorem products, Lorem store, product reviews, customer feedback, online shopping, Lorem details">
+    <meta name="author" content="Lorem Website">
+    <title>Sub-productpage</title>
+    <link rel="stylesheet" href="../../Style/Style.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 100;
+            height: 60px;
+        }
+
+        header .websitename {
+            font-size: 24px;
+            font-weight: 300;
+            color: #fafafa;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fafafa;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ffad32;
+        }
+
+        .mycart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mycart .cartbackground {
+            position: relative;
+        }
+
+        .mycart .cartbackground span {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 50%;
+        }
+
+        .mycart img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- Header section -->
+      <header>
+        <div class="websitename"><img src="../../images/LOREM.png" alt="Website Logo" style="height: 40px;"></div>
+        <nav>
+            <a href="../../Homepage.html">Home</a>
+            <a href="../Product Page redesign.html">Stores</a>
+            <a href="../About.html">About</a>
+            <a href="../research.html">Research</a>
+            <a href="../Blog.html">Blog</a>
+            <a href="../Contact us.html">Contact Us</a>
+        </nav>
+        <div class="mycart">
+            <div class="cartbackground">
+                <span id="cartbutton">0</span>
+                <img src="../../images/shoppingcart.png" alt="Cart">
+            </div>
+        </div>
+      </header>
+
+    
+    <div class="wrapper">
+        <div class="subcontainer">
+            <div class="product_div">
+                <div class="left_subcontainer">
+                    <div class="image_subcontainer">
+                        <img src="../../images/Watche1 .jpg" alt="Watch image" id="mainImage">
+                    </div>
+                    <div class="hover_subcontainer">
+                        <div class="hover_container">
+                            <img src="../../images/Watche1 .jpg" alt="">
+                        </div>
+                        <div class="hover_container">
+                            <img src="../../images/Watche1 .jpg" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="right_subcontainer">
+                    <span class="product_name">Lorem Pilot Chronograph</span>
+                    </br>
+                    <span class="product_price">Rs 160000 </br> <span style="text-decoration: line-through;"> MRP: 180000 </span> </span> 
+                    <div class="product_rating">
+                        <span><i class="fas fa-star">⭐</i></span>
+                        <span><i class="fas fa-star">⭐</i></span>
+                        <span><i class="fas fa-star">⭐</i></span>
+                        <span><i class="fas fa-star">⭐</i></span>
+                        <span><i class="fas fa-star-half-alt">⭐</i></span>
+                    </div>
+                    <p class="product_details">
+                        <h3 style="word-spacing: 10px;">About this item</h3>
+                        <ul>
+                            <li>Vintage-Inspired Design</li>
+                            <li>Chronograph Function</li>
+                            <li>High-Performance Movement</li>
+                            <li> Sapphire Crystal</li>
+                            <li>Brown Leather Strap</li>
+                        </ul>
+                    </p>
+                    <div class="btn_grp">
+                        <button class="product_btn" id="addToCartBtn">Add To cart</button>
+                        <button class="product_btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- Testimonial Section -->
+       <div class="review-section">
+        <h2>Product Reviews & Comments</h2>
+    
+        <!-- Overall Rating -->
+        <div class="overall-rating">
+          <span class="rating">★★★★☆</span>
+          <span class="score">4.2 out of 5</span>
+          <span class="total-reviews">1,234 reviews</span>
+        </div>
+    
+        <!-- Thank You Message -->
+        <div class="thank-you-message" id="thankYouMessage">
+          Thank you for your review! 😊
+        </div>
+    
+        <!-- Top Reviews -->
+    <div class="top-reviews" id="topReviews">
+          <h3>Top Reviews</h3>
+    
+          <!-- Initial Reviews -->
+        <div class="review" style="border: 1px solid; padding: 20px 20px; background-color: rgba(226, 226, 226, 0.7); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <div class="review-header">
+              <span class="rating">★★★★★</span>
+              <span class="title">Absolutely love this product!</span>
+            </div>
+            <div class="review-meta">
+              <span class="author">By Sarah T. on October 15, 2023</span>
+            </div>
+            <div class="review-body">
+              This product exceeded my expectations. It's easy to use, durable, and worth every penny. I highly recommend it to anyone looking for a reliable solution.
+            </div>
+            <div class="review-footer">
+              <span class="helpful">Helpful? <button>Yes (123)</button> <button>No (5)</button></span>
+            </div>
+            <div class="comments"">
+              <div class="comment">
+                <span class="author">John D.</span>
+                <span class="text">I agree! It's been a game-changer for me.</span>
+              </div>
+              <div class="comment">
+                <span class="author">Emily R.</span>
+                <span class="text">How long have you been using it?</span>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- View All Reviews Button -->
+        <div class="view-all">
+          <button id="seeMoreReviews">See More Reviews</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- Write a Review Form -->
+    <div style="border: 2px dashed rgb(44, 44, 44); padding: 25px 50px; background-color: rgba(226, 226, 226, 0.3);">
+        <div class="write-review" id="writeReview">
+            <h3>Write a Review</h3>
+            <form id="reviewForm">
+              <div class="form-group">
+                <label>Your Rating:</label>
+                <div class="star-rating" id="starRating">
+                  <span data-value="1">★</span>
+                  <span data-value="2">★</span>
+                  <span data-value="3">★</span>
+                  <span data-value="4">★</span>
+                  <span data-value="5">★</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Review Title:</label>
+                <input type="text" id="reviewTitle" placeholder="Summarize your review in a few words">
+              </div>
+              <div class="form-group">
+                <label>Your Review:</label>
+                <textarea id="reviewBody" placeholder="Share your experience with this product..."></textarea>
+              </div>
+              <div class="form-group">
+                <label>Would you recommend this product?</label>
+                <div class="recommend">
+                  <label><input type="radio" name="recommend" value="yes"> Yes</label>
+                  <label><input type="radio" name="recommend" value="no"> No</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Upload Photos (Optional):</label>
+                <input type="file" accept="image/*">
+              </div>
+              <button type="submit">Submit Review</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+
+    
+        <!-- View All Reviews Button -->
+        <script src="../../script/Main.js">
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <meta name="description" content="Contact us page of Lorem. Reach out to us for any inquiries, feedback, or questions. We’d love to hear from you!">
+    <meta name="keywords" content="contact, feedback, inquiry, reach out, message us, Lorem company">
+    <meta name="author" content="Lorem Company">
+    <title>Contact Us - Lorem</title>
+    <link rel="stylesheet" href="../Style/Style.css">
+</head>
+
+<style>    
+    /* Contact Form */
+    .contact-container {
+        max-width: 1200px;
+        margin: 80px auto 80px;
+        background: #d8d1d1;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact-header {
+        font-size: 36px;
+        font-weight: bold;
+        color: #382d2d;
+        margin-bottom: 20px;
+    }
+    
+    .contact-form {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #f6f6ef;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .form-group label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #ffad32;
+        outline: none;
+    }
+    
+    .form-group textarea {
+        height: 120px;
+        resize: none;
+    }
+    
+    .form-group button {
+        display: inline-block;
+        background-color: #ffad32;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .form-group button:hover {
+        background-color: #6b24a7;
+    }
+    
+ </style>
+    
+<body>
+    <!-- Header Section -->
+    <header>
+        
+        <div class="websitename"><img src ="../images/LOREM.png" style="height: 40px;"></div>
+        <nav>
+            <a href="../Homepage.html">Home</a>
+            <a href="./Product Page redesign.html">Stores</a>
+            <a href="./About.html">About</a>
+            <a href="./research.html">Research</a>
+            <a href="./Blog.html">Blog</a>
+            <a href="./Contact us.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Contact Us Section -->
+    <div class="contact-container">
+        <h1 class="contact-header">Get in Touch</h1>
+        <p>We’d love to hear from you! Please fill out the form below, and we’ll get back to you as soon as possible.</p>
+        <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="showAlert()">Submit</button>
+            </div>
+        </form>
+        <div class="form-group">
+                <a href="./forms/Feedback.html">
+                    <button type="feedback">Feedback Form</button>
+                </a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Lorem. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+    
+    document.querySelector(".contact-form").addEventListener("submit", function(event) {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Simple email validation by checking for "@" and "."
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill out all the fields.");
+        event.preventDefault(); // Prevent form submission
+    } 
+    else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        alert("Please enter a valid email address.");
+        event.preventDefault(); // Prevent form submission
+    } 
+    else {
+        alert("Thank you for reaching out to us! We’ll get back to you shortly.");
+        
+        // Clear the form fields after submission
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+        // Optionally, redirect to another page after submission
+        // window.location.href = "thank-you.html"; // Uncomment for redirection
+    }
+});
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Explore a wide range of high-quality products at Lorem. Browse our curated selection of premium items, including watches, accessories, and more.">
+    <meta name="keywords" content="Lorem, products, premium watches, accessories, online shopping, luxury products, product page">
+    <meta name="author" content="Lorem Team">
+    <meta name="robots" content="index, follow">
+    <title>Lorem Product Page </title>
+    <style>
+   /* General Reset */
+   * {
+        margin: 0; /* removes default margin */
+        padding: 0; /* removes default padding */
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        background-color: #f7f7f7; /* background color*/
+        color: #333; /*text color*/
+    }
+
+    /* Header */
+    header {
+        display: flex; /* flexbox for layout */
+        justify-content: space-between; /* aligns content to left and right edges */
+        align-items: center; /* centers items vertically */
+        position: fixed; /* fixed header at the top of the page */
+        top: 0; 
+        width: 100%; /* full width for the header */
+        background: rgba(0, 0, 0, 0.8); /* semi-transparent background */
+        padding: 20px 50px; /* adds padding to prevent elements from touching the edges */
+        z-index: 100; /* header stays on top of other elements */
+        height: 60px;
+    }
+
+    header .websitename {
+        font-size: 24px;
+        font-weight: thin;
+        color: #fafafa;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fafafa;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.5s ease;
+    }
+
+    nav a:hover {
+        background-color: #ffad32;
+    }
+
+    /* Product Body */
+    .product_body {
+        display: flex;
+        margin-top: 150px; /* ensures a gap between main body and the header*/
+    }
+
+    /* Sidebar Panel */
+    .side_pannel {
+        background-color: #fff;
+        color: #000;
+        padding: 20px; /* adds inner padding */
+        width: 230px; /* width for the sidebar */
+        position: absolute; /* positions it relative to the parent container */
+        top: 100px; /* sidebar stays below the header */
+        left: 0; /* to the left */
+        box-shadow: 1px 0 8px rgba(79, 79, 79, 0.1); /* shadow effect */
+        transition: background 0.3s ease, color 0.3s ease; /* transition effects */
+    }
+
+    .side_pannel h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .side_pannel h4 {
+        margin: 5px;
+    }
+
+    .side_pannel form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side_pannel select,
+    .side_pannel input {
+        margin-bottom: 15px;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .side_pannel button {
+        padding: 10px;
+        background-color: #ffad32;
+        color: #fafafa;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: background-color 0.5s ease;
+    }
+
+    .side_pannel button:hover {
+        background-color: #cc7a00;
+    }
+
+    /* Product Container */
+    .product_container {
+        display: flex; /* flexbox */
+        flex-wrap: wrap; /* sends items to next line if needed */
+        gap: 10px; /* spacing between items */
+        margin-left: 250px; /* gap between sidebar and the product containdr */
+        justify-content: space-evenly; /* spaces products evenly */
+        width: calc(100% - 250px); /* products take up remaining space */
+    }
+
+    /* Individual Product Box */
+    .product_division {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px; /* rounds corners */
+        width: 100%;
+        max-width: 250px; /* liimits the width of the box*/
+        height: auto; /* flexible height */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow effect*/
+        overflow: hidden; /* prevents extra content from overflowing out of the box */
+        display: flex; /* flexbox */
+        flex-direction: column; /* aligns content vertically */
+        align-items: center; /* items are centered */
+        padding: 20px; /* for inner spacing */
+        margin: 10px 0; /*vertical margin */
+        transition: transform 0.2s ease; /* hover effect */
+    }
+
+    .product_division:hover {
+        transform: scale(1.02); /* zzoom effect on hover */
+    }
+
+    .product_division img {
+        width: 100%;
+        height: 150px; /* image height */
+        object-fit: cover; /* fills the ratio of the container*/
+        border-radius: 10px; /* rounds the corners */
+    }
+
+    .product_info {
+        text-align: center; /* text are centered */
+        color: #000;
+        display: flex; /* flexbox */
+        flex-direction: column; /* aligns items vertically */
+        justify-content: space-between;
+        flex-grow: 1; /* allows content to expand */
+        width: 100%;
+        margin-top: 10px; /* for space above */
+    }
+
+    .product_info h3,
+    .product_info p {
+        flex-grow: 1; /* expands elements */
+        display: flex; /* flexbox */
+        align-items: center; /* text centered */
+        justify-content: center; /* centers text */
+        margin: 10px 0; /* adding space */
+    }
+
+    .product_info button {
+        background-color: #ffad32; /* button color */
+        padding: 10px; /* padding */
+        color: #fafafa;
+        border: none; /* removes border if theres any */
+        cursor: pointer; /* changes cursor to pointer */
+        font-size: 16px; 
+        border-radius: 5px; /* rounds button */
+        transition: background-color 0.3s ease; /* hover effect */
+        margin-top: auto; /*button at the bottom */
+    }
+
+    /* Goods Section */
+    .Goods h2 {
+        font-size: 35px;
+        font-weight: 300;
+        font-family: Georgia, 'Times New Roman', Times, serif; /* font selection*/
+        letter-spacing: 9px; /*adds letter spacing inbetween*/
+        word-spacing: 10px; /* space between words */
+        text-align: center; /* centers text */
+        margin-bottom: 15px; /* space under the section */
+        position: relative;
+        left: 0;
+        transition: left 0.3s ease; /*transition effect */
+    }
+
+    /* Footer */
+    footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center; /* centers text */
+        padding: 32px; /* padding */
+        position: relative;
+        bottom: 0px;
+        margin-top: 35%; /* space above footer */
+    }
+
+    footer p {
+        margin-bottom: 16px; /* spacing */
+    }
+
+    .social-links {
+        display: flex; /* flexbox */
+        justify-content: center; /* items aligned to the center */
+        gap: 16px; /* spacing added between items */
+    }
+
+    .social-links a {
+        color: #fff;
+        font-weight: bold;
+        transition: color 0.3s; /* smooth color transition */
+    }
+
+    .social-links a:hover {
+        color: #000; /* change color on hover */
+    }
+
+    /* styling for a button for dark and light mode */
+    .dark_btn {
+        background: transparent; /* button background transparent */
+        color: #fafafa;
+        padding: 10px 17px; /* padding inside the button */
+        border: none; /* removes default border */
+        transition: 0.4s ease-in-out; /* smooth transition effect */
+        border-radius: 36px; /* Rounds the corners for button */
+        height: 50px; 
+        width: 120px; 
+    }
+
+    /* hover effect for the 'dark_btn' */
+    .dark_btn:hover {
+        background: #0e3b7f; /* change the background color on hover */
+        color: rgb(255, 255, 255); /* text remains white on hover */
+        cursor: pointer; /* changes cursor to pointer */
+    }
+
+    .nav-links button {
+        background: transparent; /* removes background */
+        border: none; /* removes border */
+        font-size: 18px;
+        color: #fafafa;
+        font-weight: 100; /* thinner font */
+    }
+
+    /* shopping cart icon */
+    .mycart {
+        position: relative; /* positions the cart icon relative to the page */
+    }
+
+    /*  red background for cart notifications */
+    .cartbackground {
+        position: absolute; /* relative to '.mycart' */
+        top: -5px; /* slightly above the cart icon */
+        right: -5px; /*  slightly to the right */
+        background: red; /* background color to red */
+        color: #fafafa; /* text color */
+        border-radius: 50%; /* makes it circular */
+        padding: 4px 4px; /* padding inside the circle */
+        font-size: 10px;
+    }
+
+    </style>
+</head>
+
+<body id="body_js">
+
+    <!-- Header section -->
+    <header>
+        <div class="websitename"><img src ="../images/LOREM.png" style="height: 40px;"></div>
+        <nav>
+            <a href="../Homepage.html">Home</a>
+            <a href="./Product Page redesign.html">Stores</a>
+            <a href="./About.html">About</a>
+            <a href="./research.html">Research</a>
+            <a href="./Blog.html">Blog</a>
+            <a href="./Contact us.html">Contact Us</a>
+            <div class="mycart">
+                <img src="../images/shoppingcart.png" alt="Cart" width="40px">
+                <div class="cartbackground"><span id="cartbutton">0</span></div>
+            </div>
+        </nav>
+    </header>
+    <h2 style="position: absolute; left: 570px; top: 90px; font-size: 30px; word-spacing: 10px; letter-spacing: 10px; text-decoration: none; font-weight: 500;" >This is our latest collection</h2>  
+    <!-- Main Product and Side Panel Section -->
+    <div class="product_body">
+        <section class="side_pannel">
+            <div class="Side_bar">
+                <h3>Advance Search</h3>
+                <form>
+                    <h4>Brand</h4>
+                    <select id="brand">
+                        <option value="all">All brands</option>
+                        <option value="Vintage">Vintage</option>
+                        <option value="Classic">Classic</option>
+                        <option value="Modern">Modern</option>
+                    </select>
+                    <h4>Price Range</h4>
+                    <output for="price" id="priceoutput">Rs 500</output>
+                    <input type="range" id="price" name="price" min="500" max="1000000" value="500">
+
+                    <h4>Materials</h4>
+                    <select id="material">
+                        <option value="all">All materials</option>
+                        <option value="stainless">Stainless Steel</option>
+                        <option value="leather">Leather</option>
+                        <option value="rubber">Rubber</option>
+                    </select>
+                    <h4>Watch Type</h4>
+                    <select id="Watch type">
+                        <option value="all_types">All types</option>
+                        <option value="analog">Analog</option>
+                        <option value="Digital">Digital</option>
+                        <option value="chronograph">Chronograph</option>
+                        <option value="Antique">Antique</option>
+                        <option value="Sport">Sports</option>
+                    </select>
+                    <button type="submit">Apply Filters</button>
+                </br>
+                    <button type="button" id="reset-filters">Reset Filters</button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="Goods">
+            
+            <div class="product_container">
+                <!-- Repeat product_division here for each product -->
+                <div class="product_division" data-brand="Vintage" data-price="100000" data-material="stainless" data-type="analog">
+                    <a href="./Sub products/subproduct - Copy.html"><img src="../images/productimage.jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3>New timex analog watch</h3>
+                      
+                        <p>
+                            <span class="discounted-price">Rs 100000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 200000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Repeating for more products -->
+                <div class="product_division" data-brand="Vintage" data-price="230000" data-material="stainless" data-type="analog">
+                    <a href="./Sub products/subproduct - Copy - Copy.html"><img src="../images/Seiko1.jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3>Astron ‘Starfull Sky’</h3>
+                        <p>
+                            <span class="discounted-price">Rs 230000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 250000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Classic" data-price="150000" data-material="Leather" data-type="analog">
+                    <a href="./Sub products/subproduct - Copy - Copy (2).html"><img src="../images/Classic.jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3>Tissot Tradition Chronograph</h3>
+                       
+                            <span class="discounted-price">Rs 150000</span>
+                         
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Classic" data-price="160000" data-material="stainless" data-type="chronograph">
+                    <a href="./Sub products/subproduct - Copy - Copy (3).html"><img src="../images/Watche1 .jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3> Lorem Pilot Chronograph</h3>
+                       
+                        <p>
+                            <span class="discounted-price">Rs 160000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 180000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Sports" data-price="10000" data-material="Rubber" data-type="Digital">
+                    <a href="./Sub products/subproduct - Copy - Copy (4).html"><img src="../images/Sport watch.jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3> Lorem Active</h3>
+                        <p>
+                            <span class="discounted-price">Rs 8000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 10000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Classic" data-price="1000000" data-material="stainless" data-type="Antique">
+                    <a href="./Sub products/subproduct - Copy - Copy (5).html"><img src="../images/Luxury .jpeg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3>Lorem Vintage Pocket Watch</h3>
+                        <p>
+                            <span class="discounted-price">Rs 1000000</span>
+                           
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division"data-brand="Classic" data-price="50000" data-material="stainless" data-type="Analog">
+                    <a href="./Sub products/subproduct - Copy - Copy (6).html"><img src="../images/Gshock.jpg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3> Diesel Only The Brave</h3>
+                        <p>Rs 50000</p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                    
+                </div><div class="product_division" data-brand="Vintage"data-price="270000"data-material="stainless"data-type="analog">
+                    <a href="./Sub products/subproduct - Copy - Copy (7).html"><img src="../images/Seiko.jpg" alt="watch"></a>
+                    <div class="product_info">
+                        <h3>Astron ‘Morning Star’</h3>
+                       
+                            <span class="discounted-price">Rs 270000 </span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Vintage" data-price="22000" data-material="Leather" data-type="analog">
+                    <a href="./Sub products/subproduct - Copy - Copy (8).html"><img src="../images/Timex1.jpg" alt="watch"></a>
+                    <div class="product_info">
+                        <h3>Expedition Field Post Solar </h3>
+                       
+                            <span class="discounted-price">Rs 22000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 25000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product_division" data-brand="Modern" data-price="500" data-material="Rubber" data-type="Modern">
+                    <a href="./Sub products/subproduct - Copy - Copy (9).html"><img src="../images/Smart-modern.jpg" alt="watch"></a>
+                    <div class="product_info">
+                        <h3>Noise Twist Round dial Smart Watch</h3>
+                        
+                            <span class="discounted-price">Rs 500</span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+
+                <div class="product_division" data-brand="Modern" data-price="160000" data-material="Rubber" data-type="Digital">
+                    <a href="./Sub products/subproduct - Copy - Copy (10).html"><img src="../images/Garmin.jpg" alt="watch" style="height: 250px;"></a>
+                    <div class="product_info">
+                        <h3>Garmin Fenix</h3>
+                       
+                        <p>
+                            <span class="discounted-price">Rs 160000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 180000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+
+                <div class="product_division" data-brand="Classic" data-price="160000" data-material="stainless" data-type="Chronograph">
+                    <a href="./Sub products/subproduct - Copy - Copy (11).html"><img src="../images/Luxury2.jpeg" alt="watch" style="height: 150px;"></a>
+                    <div class="product_info">
+                        <h3>Selente Diamond Chronograph</h3>
+                        <p>
+                            <span class="discounted-price">Rs 160000</span>
+                            <span class="original-price" style="text-decoration: line-through;"><sub>MRP: Rs 180000</sub></span>
+                        </p>
+                        <button class="addcart" onclick="addToCart()">Add To Cart</button>
+                    </div>
+                </div>
+
+
+                <div id="no-items-message" style="display: none; text-align: center; color: #333; font-size: 18px; height: 100%;">
+                    No products found with the selected filters.
+                </div>
+                
+            </div>
+        </section>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <button id="dark" class="dark_btn" onclick="dark()">Dark Mode</button>
+            <button id="light" class="dark_btn" onclick="light()">Light Mode</button>
+            <p>&copy; 2025 Lorem. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+  <script>
+
+        let cartCount = 0;
+        
+        // Function to handle adding items to the cart
+        function addToCart() {
+            cartCount++;
+            const cartButton = document.getElementById('cartbutton');
+            cartButton.textContent = cartCount;
+            alert("Item added to cart!");
+        }
+        
+        // Dark/Light Mode Toggle
+        function dark() {
+            document.body.style.backgroundColor = "#121212";
+            document.body.style.color = "#fafafa";
+        }
+        
+        function light() {
+            document.body.style.backgroundColor = "#fafafa";
+            document.body.style.color = "#121212";
+        }
+        
+        // Get the range input and the output where the price value will be displayed
+        const priceInput = document.getElementById('price');
+        const priceOutput = document.getElementById('priceoutput');
+        
+        // Set the initial value of the output based on the initial range value
+        priceOutput.textContent = `Rs ${priceInput.value}`;
+        
+        // Add an event listener for the input event on the range slider
+        priceInput.addEventListener('input', function() {
+            priceOutput.textContent = `Rs ${priceInput.value}`;
+        });
+        
+        // Special scripting section for Scanning and filtering out the overall Items 
+        // Function to filter products based on selected filters
+        function filterProducts() {
+            // Get values from the filter form
+            const brandFilter = document.getElementById('brand').value; // Selected brand
+            const materialFilter = document.getElementById('material').value; // Selected material
+            const priceFilter = parseInt(document.getElementById('price').value, 10); // Selected price
+        
+            // This will count how many products are visible after filtering
+            let visibleProducts = 0;
+        
+            // Get all products to apply the filters
+            const products = document.querySelectorAll('.product_division');
+            
+            // Loop through each product
+            products.forEach(function(product) {
+                const brand = product.getAttribute('data-brand'); // Brand of this product
+                const material = product.getAttribute('data-material'); // Material of this product
+                const price = parseInt(product.getAttribute('data-price'), 10); // Price of this product
+        
+                // Check if the product matches the filter conditions
+                if (
+                    (brandFilter === 'all' || brand === brandFilter) &&
+                    (materialFilter === 'all' || material === materialFilter) &&
+                    price <= priceFilter
+                ) {
+                    product.style.display = 'flex'; // Show the product if it matches the filter
+                    visibleProducts++; // Increase the count of visible products
+                } else {
+                    product.style.display = 'none'; // Hide the product if it does not match
+                }
+            });
+        
+            // Show or hide the "No items found" message based on visible products
+            const noItemsMessage = document.getElementById('no-items-message');
+            if (visibleProducts === 0) {
+                noItemsMessage.style.display = 'block'; // Show message if no products match
+            } else {
+                noItemsMessage.style.display = 'none'; // Hide message if there are visible products
+                
+            }
+        }
+        
+        // When the filter form is submitted, apply the filters
+        document.querySelector('.side_pannel form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the page from refreshing
+            filterProducts(); // Call the filter function
+        });
+        
+        // When the reset button is clicked, reset the filters
+        document.getElementById('reset-filters').addEventListener('click', function() {
+            // Reset the filter form values
+            document.getElementById('brand').value = 'all';
+            document.getElementById('material').value = 'all';
+            document.getElementById('price').value = 500; // Default price value is 500
+        
+            document.getElementById('priceoutput').textContent = `Rs 500`;
+
+            // Show all products
+            const products = document.querySelectorAll('.product_division');
+            products.forEach(function(product) {
+                product.style.display = 'flex'; // Make all products visible
+            });
+        
+            // Hide the "No items found" message
+            document.getElementById('no-items-message').style.display = 'none';
+        });
+        
+        
+            </script>
+        
+
+</body>
+
+</html>

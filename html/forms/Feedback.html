@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Lorem's feedback form. Share your thoughts and feedback about our products. We value your opinion!">
+    <meta name="keywords" content="feedback form, customer feedback, product review, product feedback, user experience, Lorem products">
+    <meta name="author" content="Lorem Company">
+    <title>Feedback Form - Lorem</title>
+    <link rel="stylesheet" href="../../Style/Style.css">
+    <style>
+
+        /* Feedback Page Custom Styles */
+        .feedback-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ece6e6;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #382d2d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #2f1212;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        form button {
+            background-color: #ffad32;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        form button:hover {
+            background-color: #7418b6;
+        }
+
+        .success-message {
+            display: none;
+            color: #28a745;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        
+        <div class="websitename"><img src ="../../images/LOREM.png" style="height: 40px;"></div>
+        <nav>
+            <a href="../../Homepage.html">Home</a>
+            <a href="../Product Page redesign.html">Stores</a>
+            <a href="../About.html">About</a>
+            <a href="../research.html">Research</a>
+            <a href="../Blog.html">Blog</a>
+            <a href="../Contact us.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Feedback Form Section -->
+    <div class="feedback-container">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm" onsubmit="return submitForm()">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+            <!-- Since we have used type email it is giving error if there is no proper email but if changed to text if then it will give alert option available in the java script-->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+            <label for="product">Product Purchased:</label>
+            <select id="product" name="product" required>
+                <option value="">-- Select a Product --</option>
+                <option value="classic_watch">Classic Watch</option>
+                <option value="smart_watch">Smart Watch</option>
+                <option value="vintage_watch">Vintage Watch</option>
+                <option value="luxury_watch">Luxury Watch</option>
+            </select>
+    
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="">-- Select a Rating --</option>
+                <option value="1">1 - Very Dissatisfied</option>
+                <option value="2">2 - Dissatisfied</option>
+                <option value="3">3 - Neutral</option>
+                <option value="4">4 - Satisfied</option>
+                <option value="5">5 - Very Satisfied</option>
+            </select>
+    
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="5" placeholder="Write your feedback here..."></textarea>
+    
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="successMessage" class="success-message"></div>
+    </div>
+    
+     <!-- Footer Section -->
+     <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Lorem. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="../../script/Main.js" defer></script>
+
+</body>
+
+</html>

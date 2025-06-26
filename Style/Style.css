@@ -1,0 +1,876 @@
+
+
+/* General Reset, to remove the styling already applied by the browser, if there is any */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* This is the portion for the navigation bar. Which is consistent throught the webpages.*/
+
+        /* General Reset, to remove the styling already applied by the browser, if there is any */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Local', 'Roboto', sans-serif; /*defaulting the fontstyle */
+            line-height: 1.6; /* line spacing */
+            background-color: #f0f0f0; /* this is the background color which is specially made for the dark mode and light mode too */
+        }
+
+        /* Header */
+        header {
+            display: flex; /*creating the header as a flex to distribute the proportion properly */
+            justify-content: space-between; /* horizontal allignment*/
+            align-items: center; /*vertical allignment*/
+            position: fixed; /* making the navigation bar available any where we want as it will also scroll down with the page*/
+            top: 0; /* Making it at the top of the page */
+            width: 100%; /* covering the entire page width */
+            background: rgba(0, 0, 0, 0.8); /*transparency*/
+            padding: 20px 50px; /*spacing between the elements */
+            z-index: 100; /* making it hover infront of the elements rather than going back */
+            height: 70px; /*making the height of the nav bar height as 70px as default */
+        }
+
+        /* for navigation links*/
+        nav {
+            display: flex; /*Creating the felx box of navigation bar*/
+            gap: 15px; /* gaping between the elements */
+        }
+
+        nav a {
+            text-decoration: none;  /*removes the underline for links*/
+            color: #fafafa; /* removing the default link color and setting it */
+            font-weight: bold; /*makes the font bold*/
+            font-size: 18px;  /*adjust size of font*/ 
+            padding: 8px 16px;  /* rounds the border*/
+            border-radius: 5px;   /* rounds the border*/
+            transition: background-color 0.5s ease; /*color transition*/
+        }
+
+        nav a:hover 
+        {
+            background-color: #ffad32; /* color effect after hovering*/
+        }
+    
+/* Collections Section */
+.collections 
+{
+    padding: 64px 32px; /* making it bit space between the edge and inside content grid*/
+    text-align: center; /*main collection heading text alignmenmt*/
+}
+
+.collections h2
+ {
+    margin-bottom: 32px; /* distance between the edge of heading and grd that is 32px*/
+    font-size: 32px; /* Font size being 32 px*/
+}
+
+.collection_flex 
+{
+    display: flex;
+    flex-direction: row; /*dynamically creates as many columns as possible that are at least 300px wide but can grow to take up the available space*/
+    justify-content: space-around;/*space between the images distriputes evenly*/
+   
+}
+
+.collection-item 
+{
+    text-align: center; /* aligns the text for each specific item below text in the center*/
+    transition: transform 0.3s ease; /*effect of bulging out */
+}
+
+.collection-item img
+ {
+    width: 100%; /*maximum width with respect to their container*/
+    border-radius: 10px; /* making round of their border*/
+    object-fit: cover; /* making sure the image do not stretch and distort*/
+}
+
+.collection-item h3 
+{
+    margin-top: 16px; /* each item spacing from image*/
+    font-size: 24px; /* each item font size 1.5*16 */
+}
+
+.collection-item:hover 
+{
+    transform: scale(1.05); /* hovering effect of increasing the size of the image and text */
+}
+     
+.card img
+{
+    height: 570px; /*adjusting the height of the card image fixing it*/
+    width: 350px; /* adjusting the width of the card as fix px*/
+    object-fit: cover; /* making sure the image cover properly without stretching */
+    border-radius: 10px; /*rounding the corner of the image*/
+    transition: transform 0.5s ease; 
+}
+.container
+{
+    display: flex; /*flexible behavior*/
+    justify-content: center; /*centers the contents*/
+    gap: 50.01px;  /* gap between the cards*/
+    
+}
+.card
+{
+    height: 570px; /*fixing the card height of best value watches */
+    width: 350px;  /*fixing the card width of best value watches */
+    margin:20px;  /*space between items*/ 
+    overflow: hidden; /* hiding the overflowing contents*/
+    position: relative; /*positioning inner items*/
+    border-radius: 10px; /*adjusts radius of border*/ 
+    transition: transform 0.3s ease; /*size transition for hovering*/ 
+    box-shadow: 10px 10px rgb(67, 67, 67); /*for effect of shadow for the cards*/ 
+
+
+}
+.intro
+{
+    height: 70px; /*adjusts heigh of intro video section*/
+    width: 350px; /*adjusts width*/
+    padding: 6px; /* making it bit space between the edge and inside content grid*/  
+    box-sizing: border-box; /*sizing of border-box*/ 
+    position:absolute; /*for overlay*/
+    background: rgba(27,27,27, 0.5); /*for translucent overlay*/
+    color: #fafafa;   /*white color*/
+    bottom: 1px; /*bottom position*/
+    border-radius: 10px; /*rounding the corner of the image*/
+    transition: 0.3s ease; /*in and out transition*/
+    visibility: hidden; /*hiding the content*/
+    opacity: 0; /*for invisibility*/
+    transition: 0.5s ease; /*size transition*/ 
+}
+.intro h3
+{
+    margin: 10px; /*margins for nav bar*/
+    font-size: 40px; /*sets size of font*/
+
+}
+.intro p
+{
+    font-size: 20px; /*adjusts font size*/ 
+    margin:20px; /*margins for nav bar*/
+    opacity: 0; /*for invisibility*/
+    visibility: hidden;  /*hiding the content*/ 
+}
+.card:hover
+{
+    opacity: 1; /*for visibility*/
+    visibility: visible;  /*showing the content*/ 
+
+}
+.card:hover .intro
+{
+    height: 270px; /*adjusts height*/
+    opacity: 1;  /*for visibility*/
+    visibility: visible; /*showing the contents*/ 
+    transform: scale(1.05); /*for scale transition*/ 
+
+}
+
+.card:hover p
+{
+opacity: 1; /*for visibility*/
+visibility: visible;  /*showing the contents*/ 
+}
+.card:hover img{
+    transform: scale(1.1) rotate(-3deg); /* rotating the watch a bit by 3 deg upon hovering */
+}
+
+
+.Intro 
+{
+    position: relative;  /* Make the section relative to position its child elements */
+    color: #fafafa; /* making the text visible throughout the video */
+    text-align: center; /* presenting the entire text in the middle of the video */ 
+    padding: 80px 48px; /* padding of the Intro section with video and Text */
+    height: 400px; /* height of the Intro section*/
+    top: 0px;
+}
+
+#background-video {
+    position: absolute; /* The  */
+    top: -25px; /* make it connected to the top  */
+    left: 0; /*  make the video not slided to right */
+    width: 100%; /* 100% of the total viewport width */
+    height: 100%; /* 100% of the total viewport height */
+    object-fit: cover;  /* Ensures the video covers the section without stretching */
+    z-index: 1;  /* Place the video behind the text */
+}
+
+.Intro_content {
+    position: relative;  /* Ensures that the content stays above the video */
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;  /* Keeps content on top of the video */
+    gap: 10px;
+}
+
+
+.Explore_button:hover {
+    background-color: #1c244d; /* background color change upon hovering */
+}
+.latest {
+    padding: 64px 32px; /* padding of the Intro section with video and Text */
+    text-align: center; /*centers the text*/
+    display: flex; /*flexible behavior*/ 
+    flex-direction: column; /* changing the direction of the contents arranging column wise*/
+    overflow: hidden; /*hiding the overflowing content*/
+    justify-content: center; /*centers the content*/
+    gap: 30px; /*gaps between the lines*/ 
+}
+.latest h1{
+    font-size: 30px;
+}
+
+.stores {
+    padding: 64px 32px; 
+    text-align: center; /*centers the text*/
+}
+
+.stores button {
+    background-color: #0e3b7f;  /* stylizing the button of the homepage buy upon hover*/
+    color: #fafafa; /* text color*/
+    padding: 16px 32px; /* padding of the Intro section with video and Text */
+    border: none; /* removing any border */
+    border-radius: 5px; /*rounding the corner of the button*/
+    font-size: 16px; 
+    font-weight: bold; /* bolding the fonts*/
+    cursor: pointer; /*changing the cursor style for it*/
+    transition: background-color 0.3s; /* transistion of colour */
+}
+.stores h1{
+    font-size: 35px;  /*adjusts the font size*/
+    letter-spacing: 1px; /*spaces the letter by 1 pixel*/ 
+    word-spacing: 10px; /*spaces around the word*/
+    font-weight: 300; /*adjusts the weight of font*/
+}
+.stores h2{
+    font-size: 20px; /*adjusts the size of font*/ 
+    font-weight: 300; /*adjusts the weight of font*/
+}
+
+.stores button:hover {
+    background-color: #121212;
+}
+/* Adding another fundamental element or making it more elegant rather than a direct buttion either attacthing it to the footer or replacing it with other*/
+/* Support Section */
+.support {
+    padding: 64px 32px; /*for inserting spaces between contents*/ 
+    text-align: center; /*centers the text*/
+}
+
+.support button {
+    background-color: #0e3b7f;
+    color: #fafafa;
+    padding: 16px 32px; /*for inserting spaces between contents*/
+    border: none; /*removing any border*/
+    border-radius: 5px; /*roudning the corners by 5px*/
+    font-size: 16px; /*adjusts the size of font*/ 
+    font-weight: bold; /* it is making the font bold */
+    cursor: pointer; /*changing the cursor style for it*/
+    transition: background-color 0.3s; /*color transition*/
+}
+
+.support button:hover {
+    background-color: #121212; 
+}
+
+/* Footer */
+footer {
+    background-color: #000; /* background of the background at the end seeting it to the black*/
+    color: #fafafa; /* text color to the white */
+    text-align: center; /* Writing every text in the center */
+    padding: 32px; /*providing spacing from the edges of footer container */
+}
+
+footer p {
+    margin-bottom: 16px; /* creating a 16px margin or spacing for links below */
+}
+
+.social-links {
+    display: flex; /* converting the links into flex and into horizontal like nav links */
+    justify-content: center; /* Putting links in the center of the center just below paragraph of fotter*/ 
+    gap: 16px; /* space between each link 16px*/
+}
+
+.social-links a {
+    color: #fafafa; /* color of each link setting from blue to white*/
+    font-weight: bold; /* bolding the entire links*/
+    transition: color 0.3s; /* transistion for the hover*/
+}
+
+.social-links a:hover {
+    color: #121212; /* Transition of link when hover over them*/
+}
+
+.dark_btn{
+    background: transparent; /*for making background transparent*/
+    color: white; /*making the color white*/ 
+    padding: 10px 17px; /*for inserting spaces between contents*/ 
+    border: none; /*gets rid of border*/
+    transition: 0.4s ease-in-out; /*Smooth Transition*/ 
+    border-radius: 36px;  /*to make the shape round*/
+    height: 50px; /*fixing the height of the button*/
+    width: 120px; /*fixing the width of the button*/
+}
+.dark_btn:hover{
+    background: #0e3b7f;
+    color: rgb(255, 255, 255); /*white color*/ 
+    cursor: pointer; /*points at the cursor*/ 
+}
+.nav-links button{
+    background: transparent; /*for making background transparent*/
+    border: none;  /*gets rid of border*/
+    font-size: 18px;  /*adjusts the font size*/ 
+    color: white; /*makes color white*/ 
+    font-weight: 100; /*adjusts the weight of font*/
+}
+
+
+/* Hero Section */
+.hero {
+    height: 70%; /*viewport height*/
+    display: flex; /*flexible behavior*/
+    justify-content: left; /*horizontal alignment of child elements8*/
+    align-items: center; /*vertical alignment of child elements8*/
+    color: white; /*makes color white*/
+    text-align: left; /*alligns the text towards left*/
+    padding-top: 80px; /*for top margin*/
+    padding-left: 20px; /*for left margin*/
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send the video behind the text content */
+}
+
+.hero h2 {
+    font-family: 'Roboto Local', sans-serif;
+    margin-top: 250px ;
+    font-weight: 300;
+    font-size: 44px; /*for main headline*/
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+/* About Section */
+.about_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0;
+    text-align: center;
+    background-color: #d8d1d1;
+}
+
+.about_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+ /* fotter */
+ 
+
+
+
+/* Person Card */
+.person_card {
+    position: relative; /* To position the overlay within the card */
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.5s;
+    background-color: #f6f6ef;
+    overflow: hidden; /*Ensures image and overlay stay inside the card*/
+    background-size: cover; /*image covers the shole card*/
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Overlay Effect */
+.person_card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 10px; /* Matches the card's border radius */
+}
+
+.person_card:hover {
+    transform: scale(1.07); /*scales the card 7% larger when hovered over*/
+}
+
+.person_card:hover .overlay {
+    opacity: 1; /* Display overlay on hover */
+}
+
+.overlay h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.overlay p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+/*some change in the home page (the new section added to the home page) */
+/*blog page ko css*/
+.read_more_button button {
+    font-size: 20px;
+    text-decoration: none;
+    background: #333333;
+    border: none;
+    padding: 10px 40px;
+    position: relative;
+    left: 290px;
+    bottom: 60px;
+}
+.read_more_button a{
+    text-decoration:none;
+    color: white;
+
+}
+
+/*blog page ko css*/
+.sectionkocss{
+    background-color: #d8d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 100%;
+    height: 95%;
+}
+#watch-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+}
+
+.watchkochitra img {
+    max-width: 100%;
+    width: auto;
+    height: 550px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.watchkochitra {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    bottom: 20px;
+}
+
+
+.watchkochitra:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.watchkochitra:hover img {
+    transform: scale(1.1);
+}
+
+.watchkodescript {
+    max-width: 50%;
+}
+
+.watchkodescript h2, .watch-history h2{
+    margin-bottom: 10px;
+}
+
+.watchkodescript p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.location-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.location-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.location-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.location-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.map-link:hover {
+    background-color: #1a252f;
+}
+
+/* THis is the portion for the sub product page */
+.wrapper {
+    min-height: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    width: 100%;
+}
+
+.subcontainer {
+    width: 2000px;
+    margin: auto;
+    padding: 16px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product_div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left_subcontainer, .right_subcontainer {
+    flex: 1;
+    padding: 16px;
+}
+
+.image_subcontainer img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.hover_subcontainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.hover_subcontainer div {
+    border: 2px solid transparent;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.hover_subcontainer div:hover,
+.hover_subcontainer .active {
+    border-color: rgb(255, 0, 0);
+}
+
+.hover_subcontainer img {
+    width: 50px;
+}
+
+.product_name {
+    font-size: 26px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.product_price {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.product_details ul {
+    margin-left: 20px;
+}
+
+.btn_grp {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn_grp button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0e3b7f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn_grp button:hover {
+    background-color: #011432;
+}
+.review-section {
+  width: 100%;
+  max-width: 2000px;
+  background: #fff; /* White container */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /*remove below to see its original yo thik lagena bhane remove below code*/
+
+  /*remove above to see its original yo thik lagena bhane remove above code*/
+}
+
+
+
+.overall-rating {
+  margin-bottom: 20px;
+}
+
+.overall-rating .rating {
+  color: #f1c40f; /* Gold for stars */
+  font-size: 24px;
+}
+
+.overall-rating .score,
+.overall-rating .total-reviews {
+  margin-left: 10px;
+  color: #666; /* Gray for text */
+}
+
+/* Write a Review Form */
+.write-review {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2c3e50; /* Dark blue for labels */
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f9f9f9; /* Light gray input background */
+  color: #333; /* Dark text */
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #3498db; /* Blue border on focus */
+  outline: none;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star-rating span {
+  cursor: pointer;
+  color: #ddd; /* Inactive star color */
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.star-rating span:hover,
+.star-rating span.active {
+  color: #f1c40f; /* Gold for active stars */
+}
+
+.recommend label {
+  margin-right: 10px;
+  color: #666; /* Gray for text */
+}
+
+button {
+  background: #3498db; /* Blue button */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9; /* Darker blue on hover */
+}
+
+/* Thank You Message */
+.thank-you-message {
+  display: none; /* Hidden by default */
+  text-align: center;
+  font-size: 20px;
+  color: #27ae60; /* Green for success message */
+  margin-bottom: 30px;
+}
+
+/* Reviews */
+.top-reviews {
+  margin-bottom: 20px;
+}
+
+.review {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-header .rating {
+  color: #f1c40f; /* Gold for stars */
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.review-header .title {
+  font-weight: bold;
+  color: #2c3e50; /* Dark blue for titles */
+}
+
+.review-meta {
+  color: #666; /* Gray for meta text */
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.review-body {
+  color: #333; /* Dark text */
+  margin-bottom: 10px;
+}
+
+.review-footer {
+  margin-bottom: 10px;
+}
+
+.helpful button {
+  background: #3498db; /* Blue button */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.helpful button:hover {
+  background: #2980b9; /* Darker blue on hover */
+}
+
+.comments {
+  margin-top: 10px;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9f9f9; /* Light gray comment background */
+  border-radius: 8px;
+}
+
+.comment .author {
+  font-weight: bold;
+  color: #2c3e50; /* Dark blue for author names */
+}
+
+.comment .text {
+  color: #333; /* Dark text */
+}
+
+/* View All Button */
+.view-all {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-all button {
+  background: #3498db; /* Blue button */
+  color: #fff;
+}
+
+.view-all button:hover {
+  background: #2980b9; /* Darker blue on hover */
+}

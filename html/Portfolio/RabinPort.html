@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "author" content="Rabin Bam"> 
+    <meta name="description" content="Rabin's professional CV showcasing skills, experience, and achievements in software development.">
+    <title>Rabin Bam - Portfolio</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;  /*for the font*/
+            margin: 0;  /*removes any preset margin*/
+            padding: 0; /*removes any preset padding*/
+            background-color: #d8d1d1;
+            color: #333;
+        }
+
+        /* styling for the header and the top navigation bar */
+        header {
+            display: flex; /*flexbox layout for header*/
+            justify-content: space-between; /* spaces contents evenly in left and right*/
+            align-items: center; /* vertically aligns the item */
+            position: absolute; /* positions the header relative to the page */
+            top: 0; /* to ensure the header stays at the top */
+            width: 100%; /* spans the full width of the page */
+            background: rgba(0, 0, 0, 0.8); /* semi transparent black background */
+            padding: 20px 10px; /* for padding inside the header */
+            z-index: 100%; /* to ensure the header stays above other content */
+            height: 35px; /* sets a fixed height for the header */
+        }
+
+        /* styles the website name in the header */
+        header .websitename {
+            font-size: 24px; 
+            color: #fafafa;
+        }
+
+        /* for the navigation bar inside the header */
+        nav {
+            display: flex; /*flexbox layout for navigation bar*/
+            gap: 15px; /* to space out navigation links evenly */
+        }
+
+        /* to style the links inside the navigation bar */
+        nav a {
+            text-decoration: none; /* removes underline from links */
+            color: #fafafa;
+            font-weight: bold; /* makes the text bold */
+            font-size: 18px;
+            padding: 8px; /* adds padding inside the link */
+            border-radius: 5px; /* rounds the corners of the link */
+        }
+
+        /* changes the background color of links when hovered */
+        nav a:hover {
+            background-color: #ffad32; /* sets a hover background */
+        }
+
+        /* for the main container of the portfolio content */
+        .portie-container {
+            display: flex; /* flexbox layout */
+            flex-wrap: wrap; /* sends elements to the new lines if needed */
+            max-width: 1200px; /* limits the maximum width */
+            margin: 90px auto 20px auto; /* centers alignment for the container and adds top margin */
+            background-color: #f6f6ef; /* sets background color */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* to add a shadow effect */
+        }
+
+        /* Sidebar styling */
+        .portie-sidebar {
+            width: 100%; /* makes sidebar take full width on smaller screens */
+            max-width: 300px; /* limit for sidebar width */
+            background-color: #101029; /* sets background color */
+            color: white;
+            padding: 20px; /* adds padding inside the sidebar */
+            box-sizing: border-box; /* includes padding inside width calculation */
+        }
+
+        /* stylling the profile picture */
+        .portie-profile-pic {
+            width: 100%; /* image fills the sidebar width */
+            border-radius: 50%; /* for circular image*/
+            margin-bottom: 20px; /* space below the image */
+        }
+
+        /* stylling the contact info section */
+        .portie-contact-info {
+            margin-bottom: 20px; /* spacing below the contact section */
+        }
+
+        /* removes default margin for contact info paragraphs and lists */
+        .portie-contact-info p,
+        .portie-contact-info ul {
+            margin-bottom: 10px; /* adds space below each paragraph and list */
+        }
+
+        /* adds space between each contact info list item */
+        .portie-contact-info ul li {
+            margin-bottom: 5px; /* adds space between list items */
+        }
+
+        /* stylling the contact links */
+        .portie-contact-info ul li a {
+            color: white; 
+            text-decoration: none; /* removes underline */
+        }
+
+        /* stylling the skills section heading */
+        .portie-skills h3 {
+            margin-top: 20px; /* adds space above the skills section */
+        }
+
+        /* removing default padding and bullet points for the skills list */
+        .portie-skills ul {
+            list-style: none; /* removes bullet points */
+            padding: 0; /* removes default padding */
+        }
+
+        /* stylling each skill item */
+        .portie-skills ul li {
+            background-color: #1e2e43; /* background color */
+            margin-bottom: 10px; /* adding space between skill items */
+            padding: 10px; /* adding padding inside each skill box */
+            border-radius: 5px; /* rounding the corners */
+        }
+
+        /* MAIN content for the portfolio page */
+        .portie-content {
+            flex: 1; /* allows the content to take up available space other than the sidebar */
+            padding: 20px; /* adding space inside the content section */
+            box-sizing: border-box; /* includes padding inside width calculation */
+            margin-top: 70px; /* the content starts below the header leaving some gap */
+        }
+
+        /* stylling the main title */
+        h1 {
+            font-size: 40px;
+            margin: 0; /* removes the default margin */
+        }
+
+        /* styling the subtitle */
+        h2 {
+            font-size: 24px; /* smaller font for subtitles */
+            color: #878787; 
+            margin-bottom: 20px; /* adds space below the subtitle */
+        }
+
+        /* adding space between sections */
+        section {
+            margin-bottom: 20px; /* adds space between sections */
+        }
+
+        /* styling section titles */
+        section h3 {
+            border-bottom: 2px solid #2e3b4e; /* underline */
+            padding-bottom: 5px; /* adding padding below the title */
+            margin-bottom: 10px; /* adding space below */
+        }
+
+        /* styling each job */
+        .portie-job {
+            margin-bottom: 20px; /* adds space between each job */
+        }
+
+        /* Styling the job title */
+        .portie-job h4 {
+            margin: 0; /* removes default margin */
+            font-size: 19px;
+        }
+
+        /* styling job description */
+        .portie-job p {
+            margin: 5px 0; /* adds space above and below job description */
+        }
+
+        /* atyling the job responsibilities list */
+        .portie-job ul {
+            padding-left: 20px;
+            list-style: disc; /* bullet points */
+        }
+
+        /* back button - fixed at the bottom left */
+        .back-button {
+            position: fixed; /* keeps the button in a fixed position */
+            left: 3px; /* positions it slightly from the left */
+            top: 95%; /* positions it near the bottom */
+            transform: translateY(-50%); /* centers it vertically */
+            background-color: rgba(255, 173, 50, 0.4); /* semi-transparent color */
+            color: white;
+            border: none; /* removes border */
+            border-radius: 5px; /* rounds corners */
+            padding: 10px 20px; /* adds padding */
+            font-size: 15px;
+            cursor: pointer; /* changes the cursor to pointer while hovering */
+            transition: background-color 0.3s ease; /* smooth hover effect */
+            z-index: 1000; /* ensures the button stays above other elements */
+        }
+
+        /* changes background color on hover */
+        .back-button:hover {
+            background-color: #d98a1a; /* changes background color on hover*/
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+         <!-- Website name/logo with a link to the homepage -->
+        <div class="websitename"><a href="../../Homepage.html"><img src="../../images/LOREM.png" style="height: 40px;"></a></div>
+         
+        <!-- Navigation bar with links to different sections -->
+        <nav>
+            <a href="../../Homepage.html">Home</a>
+            <a href="../Product Page redesign.html">Stores</a>
+            <a href="../About.html">About</a>
+            <a href="../research.html">Research</a>
+            <a href="../Blog.html">Blog</a>
+            <a href="../Contact us.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="portie-container">
+         
+        <!-- Sidebar Section -->
+        <div class="portie-sidebar">
+            
+            <!-- Profile picture -->
+            <img src="../../images/Rabin Bam.jpg" alt="Profile Picture" class="portie-profile-pic" style="height: 150px;width: 150px;">
+            
+             <!-- Contact Information -->
+            <div class="portie-contact-info">
+                <h2>Rabin Bam</h2>
+                <p><strong>Location:</strong> Nepal</p>
+                <p><strong>Age:</strong> 18</p>
+                
+                <!-- Email with clickable link -->
+                <p><strong>Email:</strong> <a href="rabin@developer.com " style="text-decoration: none; color: white;">rabin@developer.com</a></p>
+                
+                <!-- Personal website link -->
+                <p><strong>Website:</strong> <a href="https://www.RabinBam.com" style="text-decoration: none; color: #007bff;">www.RabinBam.com</a></p>
+                
+                <!-- Social Media Links -->
+                <h3>Social Media:</h3>
+                <ul style="list-style-type: none; padding-left: 0;"> 
+                     <!-- Links to social media profiles (All links are currently pointing to the same Facebook profile) -->
+                    <li><a href="https://www.facebook.com/rabin.bam.50" style="text-decoration: none;  color: #007bff;">Facebook</a></li>
+                    <li><a href="https://www.facebook.com/rabin.bam.50" style="text-decoration: none;  color: #007bff;">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/rabin.bam.50" style="text-decoration: none;  color: #007bff;">LinkedIn</a></li>
+                    <li><a href="https://www.facebook.com/rabin.bam.50" style="text-decoration: none;  color: #007bff;">GitHub</a></li>
+                </ul>
+            </div>
+            
+            <!-- Skills section-->
+            <div class="portie-skills">
+                <h3>Project Management</h3>
+                <ul>
+                    <li>Jira</li>
+                    <li>Slack</li>
+                    <li>Trello</li>
+                    <li>Agile methodologies</li>
+                </ul>
+                <h3>Design & Coding</h3>
+                <ul>
+                    <li>HTML, CSS</li>
+                    <li>JavaScript, jQuery</li>
+                    <li>Front End frameworks (Angular, Ember, React)</li>
+                    <li>Responsive UI Design</li>
+                    <li>WordPress</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Visual Studio</li>
+                </ul>
+                <h3>Backend & Fullstack</h3>
+                <ul>
+                    <li>Node.js, Express</li>
+                    <li>MongoDB, SQL</li>
+                    <li>APIs & Microservices</li>
+                    <li>Serverless Architecture</li>
+                </ul>
+            </div>
+        </div>
+
+         <!-- Main Content Section -->
+        <div class="portie-content">
+            <h1>Rabin Bam</h1>
+            <h2>Excellent Frontend, Backend, and Fullstack Developer</h2>
+           
+           <!-- Profile Section -->
+            <section class="profile">
+                <h3>Profile</h3>
+                <p>Rabin Bam is an 18 years old Nepalese, brilliant in frontend, backend, and full-stack development. He currently studies AI at Islington College, where he combines art with skill to produce highly engaging and immersive user experiences through efficient website development, proactive feature optimization, and relentless debugging. Rabin is also preparing for a future in the fields of AI and quantum computing.</p>
+                <p>He is very passionate about aesthetics and UI design, and in his free time, he loves to play the piano, play football, and write stories. He is also best at storytelling.</p>
+            </section>
+           
+           <!-- Experience Section -->
+            <section class="experience">
+                <h3>Experience</h3>
+                
+                 <!-- Job 1 -->
+                <div class="portie-job">
+                    <h4>Full Stack Developer / Henser Ltd.</h4>
+                    <p>Sep 2017 - currently employed</p>
+                    <p>Philadelphia, PA</p>
+                    <ul>
+                        <li>Provide great user experience through the optimization of images, code, and cross-browser compatibility; increase Time on Page by +60 seconds for over 50 websites.</li>
+                        <li>Expand features, refine code, and enhance processes to provide even smoother operations for better user engagement.</li>
+                        <li>Designed dynamic and browser-compatible pages using HTML5, CSS3, jQuery, and JavaScript</li>
+                        <li>SPA, Responsive web design, UI using HTML5 Grid Layouts CSS3 Media Queries where it's an expression and can be used for either true or false.</li>
+                        <li>Ensure efficient web development by supporting designers and app developers while resolving website performance issues.</li>
+                        <li>ed the creation of an e-commerce website for watches called Lorem.</li>
+                    </ul>
+                </div>
+                
+                <!-- Job 2-->
+                <div class="portie-job">
+                    <h4>Full Stack Developer / Zane Ltd.</h4>
+                    <p>Sep 2017 - Aug 2018</p>
+                    <p>Nepal , Kathmandu</p>
+                    <ul>
+                        <li>Delivered responsive, cross-browser-compatible, and accessibility-compliant websites with an average of 19% faster load time than the industry average.</li>
+                        <li>Translated UI/UX design wireframes into code and created high-quality, reusable markup with HTML5 and CSS3 to design breathtaking visual elements of web applications.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3-->
+                <div class="portie-job">
+                    <h4>Technician / Gadtola Traders</h4>
+                    <p>Dates: 2019 -2024</p>
+                    <p>Location: Nepal, Dhangadhi</p>
+                    <ul>
+                        <li>Worked as a technician to repair the hardware of computers</li>
+                    </ul>
+                </div>
+            </section>            
+                </div>
+                </div>
+                <a href="../About.html" class="back-button">Back</a>
+                </body>
+                </html>
+                
